@@ -8,6 +8,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'APZelos/blamer.nvim'
 
 call plug#end()
 
@@ -83,3 +84,8 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_relative_time = 1
+
