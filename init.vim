@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'wakatime/vim-wakatime'
 Plug 'junegunn/fzf.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'scrooloose/nerdtree'
@@ -9,6 +10,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'APZelos/blamer.nvim'
+Plug 'jidn/vim-dbml'
+Plug 'Yggdroot/indentLine'
+Plug 'pedrohdz/vim-yaml-folds'
+Plug 'dense-analysis/ale'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'mattn/emmet-vim'
+Plug 'mbbill/undotree'
+Plug 'ambv/black'
 
 call plug#end()
 
@@ -89,3 +98,13 @@ let g:blamer_enabled = 1
 let g:blamer_delay = 500
 let g:blamer_relative_time = 1
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+set foldlevelstart=20
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python':['black'], 'javascript': ['prettier', 'eslint']}
+let g:ale_fix_on_save = 1
+
+nnoremap <F5> :UndotreeToggle<CR>
